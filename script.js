@@ -1,138 +1,42 @@
-function showCategory(category){
-
-let toolsDiv=document.getElementById("tools")
-
-let tools=[]
-
-if(category=="video"){
-
-tools=[
-["Video Idea","idea"],
-["Video Script","script"],
-["Viral Hook","hook"],
-["Story Script","story"],
-["Shorts Script","shorts"]
-]
-
-}
-
-if(category=="seo"){
-
-tools=[
-["Title Generator","title"],
-["Description Generator","description"],
-["Tags Generator","tags"],
-["Hashtag Generator","hashtags"],
-["SEO Keywords","keywords"]
-]
-
-}
-
-if(category=="social"){
-
-tools=[
-["Instagram Caption","caption"],
-["Reel Idea","reel"],
-["Tweet Generator","tweet"],
-["Story Idea","storyidea"]
-]
-
-}
-
-if(category=="thumbnail"){
-
-tools=[
-["Thumbnail Idea","thumbnail"],
-["Thumbnail Text","thumbtext"],
-["Thumbnail Prompt","thumbprompt"]
-]
-
-}
-
-if(category=="growth"){
-
-tools=[
-["Niche Ideas","niche"],
-["Channel Name","channel"],
-["Content Calendar","calendar"],
-["Growth Tips","growth"]
-]
-
-}
-
-toolsDiv.innerHTML=""
-
-tools.forEach(tool=>{
-
-let div=document.createElement("div")
-
-div.className="tool"
-
-div.innerText=tool[0]
-
-div.onclick=()=>generate(tool[1])
-
-toolsDiv.appendChild(div)
-
-})
-
-}
-
-
-
 function generate(type){
 
 let topic=document.getElementById("topic").value
 
 if(topic==""){
-
 document.getElementById("result").innerText="Enter topic first"
-
 return
-
 }
 
-let result="AI generated idea about "+topic
+let result=""
 
-if(type=="title") result="Top 5 secrets about "+topic
+switch(type){
 
-if(type=="script") result="आज हम बात करेंगे "+topic+" के बारे में..."
+case "title":
+result="10 Amazing Facts About "+topic+" | Must Watch!"
+break
 
-if(type=="hook") result="अगर आप "+topic+" नहीं जानते तो आप कुछ बड़ा miss कर रहे हैं!"
+case "description":
+result="In this video we talk about "+topic+" and reveal some interesting facts. Watch till the end!"
+break
 
-if(type=="idea") result="3 shocking facts about "+topic
+case "tags":
+result=topic+", viral video, youtube shorts, trending video, new video"
+break
 
-if(type=="tags") result="#viral #shorts #trending #"+topic
+case "hashtags":
+result="#viral #shorts #trending #youtube #"+topic
+break
+
+case "idea":
+result="Top 5 things you didn't know about "+topic
+break
+
+case "keyword":
+result=topic+" tutorial, "+topic+" tips, "+topic+" secrets, "+topic+" guide"
+break
+
+}
 
 document.getElementById("result").innerText=result
 
-  }
-async function generateImage(){
-
-let prompt=document.getElementById("imagePrompt").value
-
-let response=await fetch("https://api.stability.ai/v2beta/stable-image/generate/core",{
-
-method:"POST",
-
-headers:{
-
-"Authorization":"Bearer sk-FlkPcQdyURVck65lw4kOHb7E07wNhdK55U7Z0Rnqo7cVoP65",
-
-"Content-Type":"application/json"
-
-},
-function generateImage(){
-
-let prompt=document.getElementById("prompt").value
-
-if(prompt==""){
-document.getElementById("imageBox").innerText="Enter prompt"
-return
 }
-
-let url="https://image.pollinations.ai/prompt/"+encodeURIComponent(prompt)
-
-document.getElementById("imageBox").innerHTML="<img src='"+url+"' width='400'>"
-
-  }
