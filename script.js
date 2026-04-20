@@ -122,4 +122,17 @@ headers:{
 "Content-Type":"application/json"
 
 },
+function generateImage(){
 
+let prompt=document.getElementById("prompt").value
+
+if(prompt==""){
+document.getElementById("imageBox").innerText="Enter prompt"
+return
+}
+
+let url="https://image.pollinations.ai/prompt/"+encodeURIComponent(prompt)
+
+document.getElementById("imageBox").innerHTML="<img src='"+url+"' width='400'>"
+
+  }
