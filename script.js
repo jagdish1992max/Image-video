@@ -138,3 +138,10 @@ document.getElementById("imageResult").innerHTML=
 "<img src='"+data.image+"' width='300'>"
 
   }
+async function generateVideo(){
+
+let prompt=document.getElementById("videoPrompt").value
+
+document.getElementById("videoResult").innerText="Generating video..."
+
+  }
