@@ -1,55 +1,75 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+<title>Creator SEO Tools</title>
 
-<title>Super AI Creator Tools</title>
+<style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
 
-<link rel="stylesheet" href="style.css">
+h1{
+margin-bottom:30px;
+}
 
+input{
+padding:12px;
+width:300px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:12px 18px;
+margin:10px;
+border:none;
+border-radius:8px;
+background:#6366f1;
+color:white;
+cursor:pointer;
+}
+
+#result{
+margin-top:30px;
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="sidebar">
+<h1>🚀 Creator SEO Tools</h1>
 
-<h2>🤖 AI Tools</h2>
+<input id="topic" placeholder="Enter video topic">
 
-<button onclick="showCategory('video')">Video Tools</button>
-<button onclick="showCategory('seo')">YouTube SEO</button>
-<button onclick="showCategory('social')">Social Media</button>
-<button onclick="showCategory('thumbnail')">Thumbnail Tools</button>
-<button onclick="showCategory('growth')">Creator Growth</button>
+<br><br>
 
-</div>
+<button onclick="generate('title')">YouTube Title</button>
 
-<div class="main">
+<button onclick="generate('description')">Description</button>
 
-<h1>🚀 Super AI Creator Dashboard</h1>
+<button onclick="generate('tags')">Tags</button>
 
-<input id="topic" placeholder="Enter topic">
+<button onclick="generate('hashtags')">Hashtags</button>
 
-<div id="result">
+<button onclick="generate('idea')">Video Idea</button>
 
-AI result will appear here...
+<button onclick="generate('keyword')">Keywords</button>
 
-</div>
-
-<div id="tools" class="tools"></div>
-
-</div>
+<div id="result"></div>
 
 <script src="script.js"></script>
 
 </body>
-
-  </html>
-<h2>🎨 AI Image Generator</h2>
-
-<input id="prompt" placeholder="Enter image prompt">
-
-<button onclick="generateImage()">Generate Image</button>
-
-<div id="imageBox"></div>
+</html>
