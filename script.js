@@ -117,7 +117,7 @@ method:"POST",
 
 headers:{
 
-"Authorization":"Bearer YOUR_API_KEY",
+"Authorization":"Bearer sk-FlkPcQdyURVck65lw4kOHb7E07wNhdK55U7Z0Rnqo7cVoP65",
 
 "Content-Type":"application/json"
 
