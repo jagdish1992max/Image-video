@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Creator SEO Tools</title>
+
+<title>Creator Tools</title>
 
 <style>
 
 body{
 font-family:Arial;
-background:#0f172a;
+background:#111;
 color:white;
 text-align:center;
 padding:40px;
-}
-
-h1{
-margin-bottom:30px;
 }
 
 input{
@@ -22,6 +19,7 @@ padding:12px;
 width:300px;
 border-radius:8px;
 border:none;
+margin-top:20px;
 }
 
 button{
@@ -29,47 +27,79 @@ padding:12px 18px;
 margin:10px;
 border:none;
 border-radius:8px;
-background:#6366f1;
+background:#ff4444;
 color:white;
 cursor:pointer;
 }
 
 #result{
 margin-top:30px;
-background:#1e293b;
 padding:20px;
+background:#222;
 border-radius:10px;
-width:80%;
-margin-left:auto;
-margin-right:auto;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<h1>🚀 Creator SEO Tools</h1>
+<h1>🚀 Creator Tools</h1>
 
-<input id="topic" placeholder="Enter video topic">
+<input id="topic" placeholder="Enter topic">
 
-<br><br>
+<br>
 
-<button onclick="generate('title')">YouTube Title</button>
+<button onclick="titleGen()">Title</button>
 
-<button onclick="generate('description')">Description</button>
+<button onclick="descGen()">Description</button>
 
-<button onclick="generate('tags')">Tags</button>
+<button onclick="tagGen()">Tags</button>
 
-<button onclick="generate('hashtags')">Hashtags</button>
-
-<button onclick="generate('idea')">Video Idea</button>
-
-<button onclick="generate('keyword')">Keywords</button>
+<button onclick="hashGen()">Hashtags</button>
 
 <div id="result"></div>
 
-<script src="script.js"></script>
+<script>
+
+function titleGen(){
+
+let topic=document.getElementById("topic").value
+
+document.getElementById("result").innerText=
+"10 Amazing Facts About "+topic+" | Must Watch"
+
+}
+
+function descGen(){
+
+let topic=document.getElementById("topic").value
+
+document.getElementById("result").innerText=
+"This video explains everything about "+topic+" in simple words."
+
+}
+
+function tagGen(){
+
+let topic=document.getElementById("topic").value
+
+document.getElementById("result").innerText=
+topic+", viral video, youtube shorts, trending"
+
+}
+
+function hashGen(){
+
+let topic=document.getElementById("topic").value
+
+document.getElementById("result").innerText=
+"#viral #shorts #youtube #"+topic
+
+}
+
+</script>
 
 </body>
 </html>
